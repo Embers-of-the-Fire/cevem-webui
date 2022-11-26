@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVEM Enhanced - BLP Data</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./blp_load.js"></script>
+</head>
+<style>
+    @media (max-width:768px) {
+        div#btnLine {
+            height: 140px;
+        }
+
+        div#lp_view {
+            height: calc(100% - 140px);
+            padding: 10px;
+        }
+    }
+
+    @media (min-width:768px) {
+        div#btnLine {
+            height: 80px;
+        }
+
+        div#lp_view {
+            height: calc(100% - 80px);
+            padding: 25px;
+        }
+    }
+</style>
+<body style="height: 100%; padding: 0px;" class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 60px;">
+        <div class="container-fluid" style="background-color: white; z-index: 1;">
+            <a class="navbar-brand" href="./index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+                    <image width="32" height="32" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADWklEQVRYhbVXzWoUQRCunpnDguSikKBXUYIkYlw3BoMgPoq3oBdRfAfBY8CbDyOCyBqR7HpIHkDZYLwE3Sy4XdLVXT3VNT3JLm4qGaZ3fur7uv7HICI+ffEKjo5/gTEGiqIAMAboz5jkmhO+xmsWRKSVO9M6nPmwaJNry1cuw+6b12B2nr/EH6MjOPw2gMlkQmDuMKaAsgxr+m2StQTXwNZaD+rO1tJ5KtadTgdu3FqDqyvLUI1+HsPBcACT0zEUZekVE5iJawleCAJMgnfPwEVYJ++bAqxBWo/HYzgY7kNRbkDlXjwd/yHl0cTC/PEI4EyA3eTfAUCogcE9gx4Mow6MZDzmmNaV0b6V5tUk4lG7RJrfFlDvXpCI8QMGMGBhcF0FLaKJaYLsEq8YyL/g/oOZ5bsY9WGyuUhAR3X9TPow70LHA5k9YzWML9X6EdPsKdoskBMd+ToY9f1ZpNUFnz68n1vZWbK5/TB7lywgi4g/LxQ7isYhAo2LF4TehlPxRSPSCRWJB48eQ+mKlKyIIr1YYa4C0jGdEp6rFVK/O0cCSe2GlAArdf7CRsaYhDgdAhwDqVx/IAKJacSD3a1tKseccpRqAdAGYo1mxAUpgNaAavfCCmQBrttGKPja/7go95NsbG5FYokFQJkGMjGwCMm5gSyAYtcQ8tIuHB4agUmlmyzAWSCZWQvrd+9lu5+vfM2qJ2sIBzKqrGgEqyOQ270DHX75HJXf6d2PJFzCGvSNBUQWEDjUOS6DURKRZBIXyFTTLohB2uhuad3K7VDXB00uEHDM/M6ZhJT9vf5/x8Dq2u3UJeitES3g9u276vwdbRbJgcc0ZBP7+cKAvYA0qGtAnQlOYhCy+ZnI9ZurSd3Xw0nOUrLR5OLBgevgrGLtzs78tTUa91rTMP0+8L8xqYIyGCs2RxF2J5sNT7M+1dJvgbMswKCSSFKGxbpCqOsAg1o1bjUm53PGhrz5m82qbsfKBTxOJ98KM85+ut/n2nB0AYhSjNMpBRzKnYu5Xs8Bep2beDQR6fukHV9aWoLfJyfJ5xS2mB8FuPaC7KIN84tawJhE4NrKCvzt9mCw1ycS/EJScuccvSWo3jGDr3d74LDp8/zJzjP4Phqdq5i/BWcRPdZpceDv3u7CPx1Z1FagCA2nAAAAAElFTkSuQmCC"/>
+                </svg>
+                EVEM Enhanced
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Market
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="alert('Developing')">Blueprint</a></li>
+                            <li><a class="dropdown-item" href="./lp_market.html">Loyalty Point</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            DataBase
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./blp_data.html">Blueprint</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="alert('Developing')">Loyalty Point</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="col-12 row" style="height: calc(100% - 60px); margin: 0px; padding: 0px;">
+        <div class="col-12" style="height: 100%; background-color: azure; margin: 0px; padding: 0px;">
+            <div class="col-12 row" style="background-color: white; padding: 15px; margin: 0px;" id="btnLine">
+                <div class="col-6 col-md-3 col-xl-2" style="height: 50px; padding-top: 0px; padding-bottom: 0px;">
+                    <button type="button" class="btn btn-primary col-12" id="startloadBTN" onclick="get_blp_data()" style="height: 50px;">
+                        加载蓝图数据
+                    </button>
+                </div>
+                <div class="col-6 col-md-3 col-xl-2" style="height: 50px; padding-top: 0px; padding-bottom: 0px;">
+                    <button class="btn btn-info dropdown-toggle col-12" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 50px; text-align: center" id="category_list_btn">
+                        蓝图分类
+                    </button>
+                    <ul class="dropdown-menu col-6 col-md-3 col-xl-2" aria-labelledby="navbarDropdown" style="height: 200px; overflow-y: auto;overflow-x: hidden;" id="category_list">
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-xl-2" style="height: 50px; padding-top: 0px; padding-bottom: 0px;"> 
+                    <button class="btn btn-secondary dropdown-toggle col-12" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 50px; text-align: center" id="blp_list_btn">
+                        蓝图名称
+                    </button>
+                    <ul class="dropdown-menu col-6 col-md-3 col-xl-2" aria-labelledby="navbarDropdown" style="height: 200px; overflow-y: auto;overflow-x: hidden;" id="blp_list">
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-xl-2" style="height: 50px; padding-top: 0px; padding-bottom: 0px;">
+                    <button class="btn btn-default dropdown-toggle col-12" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 50px; text-align: center" id="blp_expand_btn">
+                        是否展开：否
+                    </button>
+                    <ul class="dropdown-menu col-6 col-md-3 col-xl-2" aria-labelledby="navbarDropdown" style="overflow-y: auto;overflow-x: hidden;" id="blp_expand">
+                        <li><a class="dropdown-item" href="#" onclick="exp_change(true)">是否展开：是</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="exp_change(false)">是否展开：否</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12" style="background-color: lightblue;" id="material_view">
+                <div class="card bg-light text-dark" style="height: 100%;">
+                    <div class="card-header" id="blp_selection" style="height: 50px;"><a align="center">未选择</a></div>
+                    <div class="card-body" id="blp_card_body" style="height: calc(100% - 50px);">未加载</div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-12 col-md-6 col-lg-4" style="height: 100%; background-color: white; padding: 50px;" id="blueprint_view">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    A list item
+                    <div class="col-6" style="float: left;">
+                        <div class="mat-range col-12 row">
+                            <div class="col-8" id="range">
+                                <input type="range" class="form-range" min=0 max=10 name="points" onchange="$(this).parents('#range').siblings('#value').text(value)">
+                            </div>
+                            <div class="col-4" id="value">5</div>
+                        </div>
+                        <div class="time-range col-12 row">
+                            <div class="col-8" id="range">
+                                <input type="range" class="form-range" min=0 max=20 name="points" onchange="$(this).parents('#range').siblings('#value').text(value)">
+                            </div>
+                            <div class="col-4" id="value">10</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    A second list item
+                    <div class="col-6" style="float: left;">
+                        <div class="mat-range col-12 row">
+                            <div class="col-8" id="range">
+                                <input type="range" class="form-range" min=0 max=10 name="points" onchange="$(this).parents('#range').siblings('#value').text(value)">
+                            </div>
+                            <div class="col-4" id="value">5</div>
+                        </div>
+                        <div class="time-range col-12 row">
+                            <div class="col-8" id="range">
+                                <input type="range" class="form-range" min=0 max=20 name="points" onchange="$(this).parents('#range').siblings('#value').text(value)">
+                            </div>
+                            <div class="col-4" id="value">10</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    A third list item
+                    <div class="col-6" style="float: left;">
+                        <div class="mat-range col-12 row">
+                            <div class="col-8" id="range">
+                                <input type="range" class="form-range" min=0 max=10 name="points" onchange="$(this).parents('#range').siblings('#value').text(value)">
+                            </div>
+                            <div class="col-4" id="value">5</div>
+                        </div>
+                        <div class="time-range col-12 row">
+                            <div class="col-8" id="range">
+                                <input type="range" class="form-range" min=0 max=20 name="points" onchange="$(this).parents('#range').siblings('#value').text(value)">
+                            </div>
+                            <div class="col-4" id="value">10</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+</body>
+</html>

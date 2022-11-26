@@ -102,3 +102,16 @@ dist
 
 # TernJS port file
 .tern-port
+
+*.min.js
+css/
+js/
+.idea/
+nginx.conf
+# include
+!echarts.common.min.js
+*test*
+*workspace*
+out/
+.vscode/
+node_modules/
